@@ -39,12 +39,11 @@ frontend:
       with:
         node-version: '18'
 
-    - name: 📦 Install dependencies (including Angular CLI)
-      run: |
-        npm install -g @angular/cli
-        cd frontend
-        npm install
-        npm install --save-dev karma karma-chrome-launcher
+    - name: 🛠 Install Angular CLI globally
+      run: npm install -g @angular/cli
+
+    - name: 📦 Install frontend dependencies
+      run: cd frontend && npm install
 
     - name: 🧪 Run Angular tests
-      run: cd frontend && ng test --watch=false --browsers=ChromeHeadless
+      run: cd frontend && ./node_modules/.bin/ng test --watch=false --browsers=ChromeHeadless

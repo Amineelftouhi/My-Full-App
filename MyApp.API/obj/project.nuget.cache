@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "9u8yQ2U9DPA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Neweye\\Desktop\\stage\\My-Full-App\\MyApp.API\\MyApp.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Neweye\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.5\\microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
+    "C:\\Users\\Neweye\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "C:\\Users\\Neweye\\Desktop\\stage\\My-Full-App\\MyApp.API\\MyApp.API.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Neweye\\Desktop\\stage\\My-Full-App\\MyApp.API\\MyApp.API.csproj",
+      "targetGraphs": []
+    }
+  ]
+}

@@ -26,24 +26,24 @@ jobs:
       - name: ✅ Run backend tests
         run: dotnet test MyApp.Tests
 
-frontend:
-  name: Install & Test Angular Frontend
-  runs-on: ubuntu-latest
+  frontend:
+    name: Install & Test Angular Frontend
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: 📥 Checkout code
-      uses: actions/checkout@v3
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
 
-    - name: ⚙️ Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-    - name: 🛠 Install Angular CLI globally
-      run: npm install -g @angular/cli
+      - name: 🛠 Install Angular CLI globally
+        run: npm install -g @angular/cli
 
-    - name: 📦 Install frontend dependencies
-      run: cd frontend && npm install
+      - name: 📦 Install frontend dependencies
+        run: cd frontend && npm install
 
-    - name: 🧪 Run Angular tests
-      run: cd frontend && ./node_modules/.bin/ng test --watch=false --browsers=ChromeHeadless
+      - name: 🧪 Run Angular tests
+        run: cd frontend && ./node_modules/.bin/ng test --watch=false --browsers=ChromeHeadless

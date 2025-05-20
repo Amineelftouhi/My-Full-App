@@ -1,0 +1,46 @@
+name: CI - .NET + Angular App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  backend:
+    name: Build & Test .NET Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: 🛠 Build API
+        run: dotnet build MyApp.API
+
+      - name: ✅ Run backend tests
+        run: dotnet test MyApp.Tests
+
+  frontend:
+    name: Install & Test Angular Frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Install frontend dependencies
+        run: cd frontend && npm install
+
+      - name: 🧪 Run Angular tests
+        run: cd frontend && ng test --watch=false --browsers=ChromeHeadless
